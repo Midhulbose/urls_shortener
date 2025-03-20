@@ -1,82 +1,119 @@
-# URL Shortener
+URL Shortener
 
-A simple URL Shortener built with Node.js, Express, and MongoDB. This application allows users to shorten long URLs and retrieve stored short URLs.
+A simple and efficient URL shortener built with Node.js, Express, MongoDB, and React.js. This application allows users to shorten long URLs, retrieve stored URLs, and redirect short links.
 
-## Features
+--------------------------------------------------
+ Features
+--------------------------------------------------
 - Shorten long URLs
-- Redirect short URLs to original links
+- Redirect short URLs to their original links
 - Store URLs in MongoDB
 - Retrieve all stored URLs
+- Track click counts (optional)
+- Copy shortened links easily
+- Responsive frontend with React & Tailwind CSS
 
-## Installation
+--------------------------------------------------
+ Installation
+--------------------------------------------------
 
-### Clone the Repository
-```sh
+1️⃣ Clone the Repository
+-----------------------
 git clone https://github.com/Midhulbose/urls_shortener.git
 cd urls_shortener
-```
 
-### Install Dependencies
-```sh
+2️⃣ Install Backend Dependencies
+-------------------------------
 npm install
-```
 
-### Set Up Environment Variables
+3️⃣ Set Up Environment Variables
+--------------------------------
 Create a `.env` file and add:
-```sh
 MONGO_URI=mongodb+srv://USERNAME:PASSWORD@cluster0.mongodb.net/url_shortener
 PORT=5001
-```
-Replace `USERNAME` and `PASSWORD` with your MongoDB credentials.
+BASE_URL=http://localhost:5001
 
-### Start the Server
-```sh
+(Replace USERNAME and PASSWORD with your actual MongoDB credentials.)
+
+4️⃣ Start the Backend Server
+----------------------------
 npm start
-```
+
 Expected output:
-```
 Server running on port 5001
 MongoDB Connected
-```
 
-## API Endpoints
+--------------------------------------------------
+ Frontend Setup
+--------------------------------------------------
 
-| Method | Endpoint | Description |
-|--------|---------|-------------|
-| `POST` | `/api/shorten` | Create a short URL |
-| `GET`  | `/api/urls` | Get all stored URLs |
-| `GET`  | `/:shortUrl` | Redirect to the original URL |
+1️⃣ Navigate to the Frontend Folder
+-----------------------
+cd frontend
 
-## Testing  
-Use Postman to test the API:  
+2️⃣ Install Frontend Dependencies
+-------------------------------
+npm install
 
-### Shorten a URL (POST)  
-```
+3️⃣ Start the Frontend
+----------------------
+npm start
+
+The frontend will be available at: http://localhost:3000
+
+--------------------------------------------------
+ API Endpoints
+--------------------------------------------------
+
+| Method | Endpoint       | Description |
+|--------|---------------|-------------|
+| POST   | /api/shorten  | Create a short URL |
+| GET    | /api/urls     | Get all stored URLs |
+| GET    | /:shortUrl    | Redirect to the original URL |
+
+--------------------------------------------------
+ Testing the API
+--------------------------------------------------
+
+Use Postman or cURL to test the API.
+
+Shorten a URL (POST)
+---------------------
+Endpoint:
 http://localhost:5001/api/shorten
-```
-```json
+
+Request Body:
 {
   "longUrl": "https://example.com"
 }
-```
 
-### Visit a Shortened URL (GET)  
-```
+Response Example:
+{
+  "shortUrl": "http://localhost:5001/abc123"
+}
+
+Visit a Shortened URL (GET)
+---------------------------
 http://localhost:5001/abc123
-```
 
-### Retrieve All URLs (GET)  
-```
+Retrieve All URLs (GET)
+-----------------------
 http://localhost:5001/api/urls
-```
 
-## Deployment  
-- Deploy using Render, Railway, or Vercel.
+--------------------------------------------------
+ Deployment
+--------------------------------------------------
 
-## Author  
+You can deploy this project using:
+- Backend: Render, Railway, or Heroku
+- Frontend: Vercel or Netlify
+
+--------------------------------------------------
+ Author
+--------------------------------------------------
+
 Midhul Bose  
-[GitHub Profile](https://github.com/Midhulbose)
+GitHub Profile: https://github.com/Midhulbose  
 
 
-Now, the README will be visible on GitHub.
 
